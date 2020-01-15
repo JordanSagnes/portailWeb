@@ -1,26 +1,26 @@
 <div id="login">
-    <form action="#">
-        <h1>Connexion</h1>
+  <div class="content">
+    <h1>Connexion</h1>
 
-        <div class="form">
-            <div class="input-field">
-                <i class="material-icons prefix">account_circle</i>
-                <input id="username" type="text">
-                <label for="username">First Name</label>
-            </div>
+    <div class="form">
+      <div class="input-field">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="username" type="text" [(ngModel)]="username">
+        <label for="username">First Name</label>
+      </div>
 
-            <div class="input-field">
-                <i class="material-icons prefix">vpn_key</i>
-                <input id="password" type="password">
-                <label for="password">Password</label>
-            </div>
+      <div class="input-field">
+        <i class="material-icons prefix">vpn_key</i>
+        <input id="password" type="password" [(ngModel)]="password">
+        <label for="password">Password</label>
+      </div>
 
-            <div class="action">
-                <button mat-raised-button color="primary" type="submit" (click)="login($event)">
-                    <span>Connexion <i class="fas fa-sign-in-alt"></i></span>
-                </button>
-            </div>
-        </div>
-    </form>
+      <div class="action">
+        <button mat-raised-button color="primary" type="submit" (click)="onLogin($event)">
+          <span>Connexion <i class="fas fa-sign-in-alt"></i></span>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 

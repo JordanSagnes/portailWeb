@@ -15,6 +15,7 @@ import {MatInputModule} from '@angular/material/input';
 import { UserComponent } from './pages/user/user.component';
 import { HeaderComponent } from './pages/header/header.component';
 import { NavigationComponent } from './pages/navigation/navigation.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,21 +25,22 @@ import { NavigationComponent } from './pages/navigation/navigation.component';
     HeaderComponent,
     NavigationComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatSliderModule,
-        MatToolbarModule,
-        MatSidenavModule,
-        LayoutModule,
-        MatButtonModule,
-        MatIconModule,
-        MatListModule,
-        MatCardModule,
-        MatFormFieldModule,
-        MatInputModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    LayoutModule,
+    MatButtonModule,
+    MatIconModule,
+    MatListModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
