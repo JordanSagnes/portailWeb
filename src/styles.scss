@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+$primaryColor: #3f51b5;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+h1, h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: #000 !important;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus, .input-field input[type=password]:focus {
+  border-bottom: 1px solid $primaryColor !important;
+  box-shadow: 0 1px 0 0 #000 !important;
+}
+
+.input-field .prefix.active {
+  color: $primaryColor !important;
+}
+
+
