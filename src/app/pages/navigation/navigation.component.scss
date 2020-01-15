@@ -1,0 +1,30 @@
+@import "~src/sass/variables";
+
+#side-nav {
+  position: fixed;
+  top: $headerHeight;
+  bottom: 0;
+  width: $sidenavWidth;
+  border-right: 2px solid rgba(0,0,0,0.1);
+}
+
+.links {
+  .link {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: black;
+    transition: all 0.5s ease-in-out;
+
+    i {
+      display: flex;
+      width: 40px;
+      font-size: 20px;
+      color: rgba(0,0,0,0.3);
+    }
+
+    &:hover {
+      background-color: rgba(0,0,0,0.1);
+    }
+  }
+}

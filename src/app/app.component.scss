@@ -1,0 +1,11 @@
+@import "~src/sass/variables";
+
+.navigation-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  .content {
+    margin-left: $sidenavWidth;
+    overflow-y: hidden;
+  }
+}

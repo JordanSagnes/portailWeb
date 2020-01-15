@@ -1,0 +1,11 @@
+@import "~src/sass/variables";
+
+header {
+  nav {
+    background-color: $primaryColor;
+  }
+
+  i {
+    margin-right: 50px;
+  }
+}
