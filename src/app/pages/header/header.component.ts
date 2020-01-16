@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'pwe-header',
@@ -7,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  private showSideNav: boolean = true;
+  @Output() showSideNavEvent = new EventEmitter<boolean>();
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+  onShowSideNav() {
+    this.showSideNav = !this.showSideNav;
+    this.showSideNavEvent.emit(this.showSideNav);
   }
 }

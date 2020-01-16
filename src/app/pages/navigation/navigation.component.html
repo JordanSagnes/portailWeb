@@ -1,4 +1,4 @@
-<div id="side-nav" *ngIf="isVisible">
+<div id="side-nav" [ngClass]="isVisible ? 'active' : 'inactive'">
   <div class="links">
     <a href="#" class="link">
       <i class="fas fa-sign-in-alt"></i>

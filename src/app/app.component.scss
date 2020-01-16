@@ -5,7 +5,40 @@
   grid-template-columns: auto 1fr;
 
   .content {
-    margin-left: $sidenavWidth;
-    overflow-y: hidden;
+    overflow-x: hidden;
+
+    &.sideNavIsActive {
+      animation-duration: 0.5s;
+      animation-name: contentSlideIn;
+      animation-iteration-count: 1;
+      margin-left: $sidenavWidth;
+
+      @keyframes contentSlideIn {
+        from {
+          margin-left: 0;
+        }
+
+        to {
+          margin-left: $sidenavWidth;
+        }
+      }
+    }
+
+    &.sideNavIsInactive {
+      animation-duration: 0.5s;
+      animation-name: contentSlideOut;
+      animation-iteration-count: 1;
+      margin-left: 0;
+
+      @keyframes contentSlideOut {
+        from {
+          margin-left: $sidenavWidth;
+        }
+
+        to {
+          margin-left: 0;
+        }
+      }
+    }
   }
 }
