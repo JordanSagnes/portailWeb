@@ -1,11 +1,11 @@
 <div id="side-nav" [ngClass]="isVisible ? 'active' : 'inactive'">
   <div class="links">
-    <a href="#" class="link">
+    <a class="link" routerLink="/login" routerLinkActive="active">
       <i class="fas fa-sign-in-alt"></i>
       <span>Connexion</span>
     </a>
 
-    <a href="#" class="link">
+    <a class="link" routerLink="/user" routerLinkActive="active">
       <i class="fas fa-users"></i>
       <span>Utilisateurs</span>
     </a>

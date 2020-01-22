@@ -1,5 +1,6 @@
 #login {
   margin-top: 100px;
+  margin-bottom: 100px;
   display: flex;
   justify-content: center;
 
@@ -30,6 +31,10 @@
         button i {
           margin-left: 10px;
         }
+      }
+
+      .helper-text.error {
+        color: red;
       }
     }
   }

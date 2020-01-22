@@ -1,10 +1,8 @@
-<!--<pwe-nav></pwe-nav>-->
 <pwe-header (showSideNavEvent)="toggleShowSideNav($event)"></pwe-header>
 <div class="navigation-grid">
-  <pwe-navigation [isVisible]="showSideNav"></pwe-navigation>
-  <div class="content" [ngClass]="(showSideNav) ? 'sideNavIsActive' : 'sideNavIsInactive'">
-    <pwe-login></pwe-login>
-    <pwe-user></pwe-user>
+  <pwe-navigation [isVisible]="showSideNav && isAuth"></pwe-navigation>
+  <div class="content" [ngClass]="(showSideNav && isAuth) ? 'sideNavIsActive' : 'sideNavIsInactive'">
+    <router-outlet></router-outlet>
   </div>
 </div>
 
