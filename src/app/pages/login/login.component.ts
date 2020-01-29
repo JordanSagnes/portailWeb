@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
         this.authService.signInUser(this.loginForm.value.email, this.loginForm.value.password).then(
             () => {
                 this.toastr.success('Vous êtes maintenant connecté !');
-                this.router.navigate(['/dashboard']); // todo change this
+                this.router.navigate(['/dashboard']);
             },
             (error) => {
                 this.toastr.error('Erreur lors de la connexion');

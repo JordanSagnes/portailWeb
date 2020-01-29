@@ -21,8 +21,6 @@ import {HttpClientModule} from '@angular/common/http';
 import {ToastrModule} from 'ngx-toastr';
 import {RouterModule} from '@angular/router';
 import appRoutes from './router';
-import {AuthGuardService} from './services/guards/auth-guard.service';
-import {IsAuthGuardService} from './services/guards/is-auth-guard.service';
 import { UsersListComponent } from './pages/users-list/users-list.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import {AngularFireModule} from '@angular/fire';
@@ -64,7 +62,7 @@ import {AngularFireAuthGuard} from '@angular/fire/auth-guard';
         AngularFireModule,
         AngularFireDatabaseModule
     ],
-    providers: [AuthService, AuthGuardService, IsAuthGuardService, AngularFireAuth, AngularFireAuthGuard],
+    providers: [AuthService, AngularFireAuth, AngularFireAuthGuard],
     bootstrap: [AppComponent]
 })
 export class AppModule {

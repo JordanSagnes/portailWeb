@@ -28,6 +28,5 @@ export class HeaderComponent implements OnInit {
     this.authService.signOutUser();
     this.toastr.success('Vous vous êtes déconnecté !');
     this.router.navigate(['/login']);
-    this.isAuth = false; // TODO mettre en place un observable qui check tout seul
   }
 }
