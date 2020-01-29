@@ -1,8 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import * as firebase from 'firebase';
 import {AuthService} from '../../services/auth.service';
 import {ToastrService} from 'ngx-toastr';
 import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'pwe-header',
@@ -17,15 +17,7 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService, private toastr: ToastrService, private router: Router) { }
 
   ngOnInit() {
-    firebase.auth().onAuthStateChanged(
-        (user) => {
-          if(user) {
-            this.isAuth = true;
-          } else {
-            this.isAuth = false;
-          }
-        }
-    );
+    this.authService.getUser().subscribe((value) => this.isAuth = (value !== null));
   }
   onShowSideNav() {
     this.showSideNav = !this.showSideNav;
@@ -36,5 +28,6 @@ export class HeaderComponent implements OnInit {
     this.authService.signOutUser();
     this.toastr.success('Vous vous êtes déconnecté !');
     this.router.navigate(['/login']);
+    this.isAuth = false; // TODO mettre en place un observable qui check tout seul
   }
 }

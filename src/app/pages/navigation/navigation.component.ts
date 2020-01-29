@@ -8,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class NavigationComponent implements OnInit {
   @Input() private isVisible: boolean;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }

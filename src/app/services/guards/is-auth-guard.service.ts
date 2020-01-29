@@ -17,7 +17,7 @@ export class IsAuthGuardService {
                 if (!user) {
                   resolve(true);
                 } else {
-                  this.router.navigate(['/user']); // todo change /user
+                  this.router.navigate(['/users']); // todo change /user
                   resolve(false);
                 }
               }

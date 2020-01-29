@@ -1,0 +1,14 @@
+#usersList {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -20px;
+
+  .user {
+    margin: 0 20px;
+  }
+
+  &::after {
+    content: "";
+    flex: auto;
+  }
+}
