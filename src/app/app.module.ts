@@ -20,7 +20,7 @@ import {AuthService} from './services/auth.service';
 import {HttpClientModule} from '@angular/common/http';
 import {ToastrModule} from 'ngx-toastr';
 import {RouterModule} from '@angular/router';
-import appRoutes from './router';
+import {appRoutes} from './router';
 import { UsersListComponent } from './pages/users-list/users-list.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import {AngularFireModule} from '@angular/fire';
@@ -43,6 +43,9 @@ import {AngularFireAuthGuard} from '@angular/fire/auth-guard';
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFireModule,
+        AngularFireDatabaseModule,
         MatSliderModule,
         MatToolbarModule,
         MatSidenavModule,
@@ -57,10 +60,7 @@ import {AngularFireAuthGuard} from '@angular/fire/auth-guard';
         ReactiveFormsModule,
         HttpClientModule,
         ToastrModule.forRoot(),
-        RouterModule.forRoot(appRoutes, { enableTracing: false }),
-        AngularFireModule.initializeApp(environment.firebase),
-        AngularFireModule,
-        AngularFireDatabaseModule
+        RouterModule.forRoot(appRoutes, { enableTracing: false })
     ],
     providers: [AuthService, AngularFireAuth, AngularFireAuthGuard],
     bootstrap: [AppComponent]
