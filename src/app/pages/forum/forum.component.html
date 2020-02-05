@@ -1,0 +1,30 @@
+<div id="forum">
+    <h1>Forum</h1>
+
+    <!--List-->
+    <div class="posts">
+        <ul class="collection">
+            <li class="collection-item avatar" *ngFor="let post of posts">
+                <i class="material-icons circle">comment</i>
+                <span class="title">{{post.title}}</span>
+                <div [innerHTML]="post.content"></div>
+                <a href="#" class="secondary-content"><i class="material-icons showPost">send</i></a>
+            </li>
+
+            <li class="collection-item avatar" *ngIf="posts.length === 0">
+                <i class="material-icons circle">comment</i>
+                <span class="title">Aucun article</span>
+            </li>
+        </ul>
+    </div>
+
+    <!--Modal add post-->
+    <pwe-modal [isVisible]="formIsVisible" (hideModal)="hideForm($event)">
+        <pwe-forum-form (hideForm)="hideForm($event)"></pwe-forum-form>
+    </pwe-modal>
+
+    <a class="btn-floating btn-large waves-effect waves-light red btn-addPost" (click)="showForm()">
+        <i class="material-icons">add</i>
+    </a>
+
+</div>

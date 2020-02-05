@@ -1,0 +1,58 @@
+@import "~src/sass/variables";
+
+.my-modal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 100;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.5);
+
+  .box {
+    position: relative;
+    z-index: 100000;
+    background-color: white;
+    min-width: 200px;
+    min-height: 200px;
+    border-radius: 10px;
+    padding: 30px;
+    max-height: calc(100vh - 50px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    animation-duration: 0.5s;
+    animation-name: fade;
+
+    @media screen and (max-width: $mobileSize) {
+      padding: 20px;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 20px;
+      color: rgba(0,0,0,0.2);
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        color: rgba(0,0,0,0.5);
+        cursor: pointer;
+      }
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}

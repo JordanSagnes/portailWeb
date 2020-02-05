@@ -16,7 +16,7 @@ import {UserComponent} from './shared/user/user.component';
 import {HeaderComponent} from './pages/header/header.component';
 import {NavigationComponent} from './pages/navigation/navigation.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {AuthService} from './services/auth.service';
+import {AuthService} from './services/auth/auth.service';
 import {HttpClientModule} from '@angular/common/http';
 import {ToastrModule} from 'ngx-toastr';
 import {RouterModule} from '@angular/router';
@@ -28,6 +28,13 @@ import { environment} from '../environments/environment';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {AngularFireAuthGuard} from '@angular/fire/auth-guard';
+import { ForumComponent } from './pages/forum/forum.component';
+import {PostService} from './services/post/post.service';
+import {AngularFirestore} from '@angular/fire/firestore';
+import { ForumFormComponent } from './pages/forum-form/forum-form.component';
+import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
+import { ModalComponent } from './shared/modal/modal.component';
+import { StopClickPropagationDirective } from './directives/stop-click-propagation.directive';
 
 @NgModule({
     declarations: [
@@ -38,6 +45,10 @@ import {AngularFireAuthGuard} from '@angular/fire/auth-guard';
         NavigationComponent,
         UsersListComponent,
         DashboardComponent,
+        ForumComponent,
+        ForumFormComponent,
+        ModalComponent,
+        StopClickPropagationDirective,
     ],
     imports: [
         BrowserModule,
@@ -60,9 +71,10 @@ import {AngularFireAuthGuard} from '@angular/fire/auth-guard';
         ReactiveFormsModule,
         HttpClientModule,
         ToastrModule.forRoot(),
-        RouterModule.forRoot(appRoutes, { enableTracing: false })
+        RouterModule.forRoot(appRoutes, { enableTracing: false }),
+        CKEditorModule
     ],
-    providers: [AuthService, AngularFireAuth, AngularFireAuthGuard],
+    providers: [AuthService, AngularFireAuth, AngularFireAuthGuard, AngularFirestore, PostService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

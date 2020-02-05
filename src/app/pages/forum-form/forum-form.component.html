@@ -1,0 +1,38 @@
+<div id="forum-form">
+    <h2><i class="far fa-newspaper"></i> Ajouter un article</h2>
+    <form novalidate #f="ngForm">
+        <div class="input-field">
+            <input
+                    [(ngModel)]="model.title"
+                    id="title"
+                    name="title"
+                    type="text"
+                    required
+                    minlength="4"
+                    #title="ngModel"
+            >
+            <label for="title">Titre</label>
+            <span class="helper-text error" data-error="wrong" *ngIf="title.dirty && title.errors?.required">
+                Ce champ est requis<br>
+            </span>
+            <span class="helper-text error" data-error="wrong" *ngIf="title.dirty && title.errors?.minlength">
+                Ce champ doit faire au moins 4 caractères
+            </span>
+        </div>
+        <ckeditor
+            [(ngModel)]="model.content"
+            [ngModelOptions]="{standalone: true}"
+            [editor]="Editor">
+        </ckeditor>
+
+        <div class="buttons">
+            <button
+                type="button"
+                class="waves-effect waves-light btn"
+                [disabled]="!f.valid"
+                (click)="addPost()">
+                Ajouter
+            </button>
+        </div>
+    </form>
+</div>

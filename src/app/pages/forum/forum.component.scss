@@ -1,0 +1,21 @@
+@import "~src/sass/variables";
+
+#forum {
+  .btn-addPost {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+  }
+
+  .showPost {
+    color: $primaryColor;
+  }
+
+  .my-modal {
+    min-width: 500px;
+
+    @media screen and (max-width: $mobileSize) {
+      min-width: auto;
+    }
+  }
+}
