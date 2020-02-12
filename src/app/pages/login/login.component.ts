@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {AuthService} from '../../services/auth/auth.service';
-import {ToastrService} from 'ngx-toastr';
 import {Router} from '@angular/router';
+import {SnackBarService} from '../../shared/snack-bar/snack-bar.service';
 
 @Component({
     selector: 'pwe-login',
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
         password: ['', Validators.required],
     });
 
-    constructor(private fb: FormBuilder, private router: Router, private toastr: ToastrService, public authService: AuthService) {
+    constructor(private fb: FormBuilder, private router: Router, private snackBarService: SnackBarService, public authService: AuthService) {
     }
 
     ngOnInit() {
@@ -24,11 +24,11 @@ export class LoginComponent implements OnInit {
     onSubmit() {
         this.authService.signInUser(this.loginForm.value.email, this.loginForm.value.password).then(
             () => {
-                this.toastr.success('Vous êtes maintenant connecté !');
+                this.snackBarService.show('vous êtes maintenant connecté', 'success');
                 this.router.navigate(['/dashboard']);
             },
             (error) => {
-                this.toastr.error('Erreur lors de la connexion');
+                this.snackBarService.show('Erreur lors de la connexion, verifiez vos identifiants', 'error');
             }
         );
     }

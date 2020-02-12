@@ -35,6 +35,7 @@ import { ForumFormComponent } from './pages/forum-form/forum-form.component';
 import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
 import { ModalComponent } from './shared/modal/modal.component';
 import { StopClickPropagationDirective } from './directives/stop-click-propagation.directive';
+import { SnackBarComponent } from './shared/snack-bar/snack-bar.component';
 
 @NgModule({
     declarations: [
@@ -49,6 +50,7 @@ import { StopClickPropagationDirective } from './directives/stop-click-propagati
         ForumFormComponent,
         ModalComponent,
         StopClickPropagationDirective,
+        SnackBarComponent,
     ],
     imports: [
         BrowserModule,
