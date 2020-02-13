@@ -2,7 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import {PostService} from '../../services/post/post.service';
 import Post from '../../interfaces/post';
-import {ToastrService} from 'ngx-toastr';
+import {SnackBarService} from '../../shared/snack-bar/snack-bar.service';
 
 @Component({
   selector: 'pwe-forum-form',
@@ -13,7 +13,7 @@ export class ForumFormComponent implements OnInit {
   private model: Post;
   private Editor = ClassicEditor;
   @Output('hideForm') hideForm = new EventEmitter<void>();
-  constructor(private postService: PostService, private toastr: ToastrService) {
+  constructor(private postService: PostService, private snackBarService: SnackBarService) {
     this.initPost();
   }
 
@@ -27,7 +27,8 @@ export class ForumFormComponent implements OnInit {
   addPost() {
     this.postService.addPost(this.model);
     this.initPost();
-    this.toastr.success('L\'article a bien été ajouté');
+    this.snackBarService.show('L\'article a bien été ajouté', 'success');
+
     this.hideForm.emit();
   }
 

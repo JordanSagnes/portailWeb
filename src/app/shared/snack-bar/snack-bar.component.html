@@ -1,4 +1,5 @@
-<div id="snack-bar" class="error" *ngIf="isVisible">
-    <i class="far fa-check-circle"></i>
+<div id="snack-bar" [@openClose] [ngClass]="type" *ngIf="isVisible">
+    <i class="far fa-check-circle" *ngIf="type == 'success'"></i>
+    <i class="far fa-times-circle" *ngIf="type == 'error'"></i>
     <span>{{message}}</span>
 </div>
