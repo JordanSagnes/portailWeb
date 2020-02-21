@@ -36,6 +36,9 @@ import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
 import { ModalComponent } from './shared/modal/modal.component';
 import { StopClickPropagationDirective } from './directives/stop-click-propagation.directive';
 import { SnackBarComponent } from './shared/snack-bar/snack-bar.component';
+import { FilesComponent } from './pages/files/files.component';
+import { FileFormComponent } from './pages/file-form/file-form.component';
+import { DragAndDropDirective } from './pages/file-form/drag-and-drop.directive';
 
 @NgModule({
     declarations: [
@@ -51,6 +54,9 @@ import { SnackBarComponent } from './shared/snack-bar/snack-bar.component';
         ModalComponent,
         StopClickPropagationDirective,
         SnackBarComponent,
+        FilesComponent,
+        FileFormComponent,
+        DragAndDropDirective,
     ],
     imports: [
         BrowserModule,

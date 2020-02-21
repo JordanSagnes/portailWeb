@@ -1,10 +1,5 @@
 <div id="side-nav" [ngClass]="isVisible ? 'active' : 'inactive'">
   <div class="links">
-    <a class="link" routerLink="/login" routerLinkActive="active">
-      <i class="fas fa-sign-in-alt"></i>
-      <span>Connexion</span>
-    </a>
-
     <a class="link" routerLink="/dashboard" routerLinkActive="active">
       <i class="fas fa-columns"></i>
       <span>Dashboard</span>
@@ -18,6 +13,10 @@
     <a class="link" routerLink="/forum" routerLinkActive="active">
       <i class="far fa-newspaper"></i>
       <span>Forum</span>
+    </a>
+    <a class="link" routerLink="/files" routerLinkActive="active">
+      <i class="far fa-folder-open"></i>
+      <span>Fichiers</span>
     </a>
   </div>
 </div>

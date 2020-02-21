@@ -1,0 +1,12 @@
+<div id="files">
+    <h1>test</h1>
+
+    <!--Modal add file-->
+    <pwe-modal [isVisible]="formIsVisible" (hideModal)="hideForm($event)">
+        <pwe-file-form (hideForm)="hideForm($event)"></pwe-file-form>
+    </pwe-modal>
+
+    <a class="btn-floating btn-large waves-effect waves-light red btn-addFile" (click)="showForm()">
+        <i class="material-icons">add</i>
+    </a>
+</div>

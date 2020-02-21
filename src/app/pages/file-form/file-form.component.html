@@ -1,0 +1,24 @@
+<div id="file-form">
+    <h2><i class="far fa-folder-open"></i> Ajouter un fichier</h2>
+    <form novalidate #f="ngForm">
+        <div class="input-field col s6">
+            <i class="material-icons prefix">label</i>
+            <input id="file_name" type="text" class="validate">
+            <label for="file_name">Nom du fichier</label>
+        </div>
+        <div class="input-file" pweDragAndDrop (onFileDropped)="dragFile($event)">
+            <input type="file" class="hidden" name="file" (change)="importFile($event)" #file>
+            <span class="title">Glisser / déposer un fichier</span>
+            <button type="button" class="btn-file" (click)="file.click()"><i class="fas fa-upload"></i>Choisir un fichier</button>
+            <span class="file-name" [ngClass]="fileName.length > 0 ? '' : 'hidden'">{{fileName}}</span>
+        </div>
+        <div class="buttons">
+            <button
+                    type="button"
+                    class="waves-effect waves-light btn"
+                    [disabled]="!f.valid">
+                Ajouter
+            </button>
+        </div>
+    </form>
+</div>
