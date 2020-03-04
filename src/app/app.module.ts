@@ -30,7 +30,7 @@ import {AngularFireAuth} from '@angular/fire/auth';
 import {AngularFireAuthGuard} from '@angular/fire/auth-guard';
 import { ForumComponent } from './pages/forum/forum.component';
 import {PostService} from './services/post/post.service';
-import {AngularFirestore} from '@angular/fire/firestore';
+import {AngularFirestore, AngularFirestoreModule} from '@angular/fire/firestore';
 import { ForumFormComponent } from './pages/forum-form/forum-form.component';
 import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
 import { ModalComponent } from './shared/modal/modal.component';
@@ -39,6 +39,8 @@ import { SnackBarComponent } from './shared/snack-bar/snack-bar.component';
 import { FilesComponent } from './pages/files/files.component';
 import { FileFormComponent } from './pages/file-form/file-form.component';
 import { DragAndDropDirective } from './pages/file-form/drag-and-drop.directive';
+import {AngularFireStorage, AngularFireStorageModule} from '@angular/fire/storage';
+import {FileService} from './services/file/file.service';
 
 @NgModule({
     declarations: [
@@ -65,6 +67,8 @@ import { DragAndDropDirective } from './pages/file-form/drag-and-drop.directive'
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireModule,
         AngularFireDatabaseModule,
+        AngularFireStorageModule,
+        AngularFirestoreModule,
         MatSliderModule,
         MatToolbarModule,
         MatSidenavModule,
@@ -82,7 +86,7 @@ import { DragAndDropDirective } from './pages/file-form/drag-and-drop.directive'
         RouterModule.forRoot(appRoutes, { enableTracing: false }),
         CKEditorModule
     ],
-    providers: [AuthService, AngularFireAuth, AngularFireAuthGuard, AngularFirestore, PostService],
+    providers: [AuthService, FileService, AngularFireAuth, AngularFireAuthGuard, AngularFirestore, PostService, AngularFirestore],
     bootstrap: [AppComponent]
 })
 export class AppModule {

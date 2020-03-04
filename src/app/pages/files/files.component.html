@@ -1,5 +1,13 @@
 <div id="files">
-    <h1>test</h1>
+    <div class="files" *ngIf="files.length > 0">
+        <a href="{{file.url}}" target="_blank" class="file" *ngFor="let file of files" download>
+            <img src="{{file.url}}" alt="preview {{file.name}}" *ngIf="isImage(file)">
+            <img src="../../../assets/not-picture.jpg" alt="preview {{file.name}}" *ngIf="!isImage(file)">
+            <div class="info">
+                <span>{{file.name}}</span>
+            </div>
+        </a>
+    </div>
 
     <!--Modal add file-->
     <pwe-modal [isVisible]="formIsVisible" (hideModal)="hideForm($event)">

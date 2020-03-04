@@ -11,6 +11,7 @@ export class ForumComponent implements OnInit {
   private formIsVisible: boolean;
   constructor(private postService: PostService) {
     this.formIsVisible = false;
+    this.posts = [];
   }
 
   ngOnInit() {

@@ -42,6 +42,11 @@
       }
     }
 
+    .progress {
+      .determinate {
+        background-color: $primaryColor;
+      }
+    }
     .buttons {
       margin-top: 20px;
       button {
