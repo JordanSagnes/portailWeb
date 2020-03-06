@@ -7,9 +7,19 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class UserComponent implements OnInit {
   @Input() user: any; // todo change any
-  constructor() { }
+  private formIsVisible: boolean;
+
+  constructor() {
+    this.formIsVisible = false;
+  }
 
   ngOnInit() {
+  }
+  showForm() {
+    this.formIsVisible = true;
+  }
+  hideForm($event) {
+    this.formIsVisible = false;
   }
 
 }

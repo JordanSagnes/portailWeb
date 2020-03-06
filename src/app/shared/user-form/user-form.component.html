@@ -1,0 +1,46 @@
+<div class="user-form">
+  <div class="top">
+    <div class="icon-rounded">
+      <i class="far fa-user"></i>
+    </div>
+    <span class="username">{{ model.firstname }} {{ model.lastname }}</span>
+    <span class="email">{{ model.email }}</span>
+  </div>
+
+  <form novalidate #f="ngForm">
+    <div class="input-field">
+      <i class="material-icons prefix">phone</i>
+      <input id="phone" name="phone" type="tel" [(ngModel)]="model.phone" placeholder="Téléphone" required #phone="ngModel">
+      <span class="helper-text error" data-error="wrong" *ngIf="phone.dirty && phone.errors?.required">
+        Ce champ est requis
+      </span>
+    </div>
+
+    <div class="input-field">
+      <i class="material-icons prefix">work</i>
+      <input id="job" name="job" type="text" [(ngModel)]="model.job" placeholder="Métier" required #job="ngModel">
+      <span class="helper-text error" data-error="wrong" *ngIf="job.dirty && job.errors?.required">
+        Ce champ est requis
+      </span>
+    </div>
+
+    <div class="input-field">
+      <i class="material-icons prefix">group</i>
+      <input id="team" name="team" type="text" [(ngModel)]="model.team" placeholder="Équipe" required #team="ngModel">
+      <span class="helper-text error" data-error="wrong" *ngIf="team.dirty && team.errors?.required">
+        Ce champ est requis
+      </span>
+    </div>
+
+
+    <div class="buttons">
+      <button
+        type="button"
+        class="waves-effect waves-light btn"
+        [disabled]="!f.valid"
+        (click)="update()">
+        Modifier
+      </button>
+    </div>
+  </form>
+</div>

@@ -41,6 +41,7 @@ import { FileFormComponent } from './pages/file-form/file-form.component';
 import { DragAndDropDirective } from './pages/file-form/drag-and-drop.directive';
 import {AngularFireStorage, AngularFireStorageModule} from '@angular/fire/storage';
 import {FileService} from './services/file/file.service';
+import { UserFormComponent } from './shared/user-form/user-form.component';
 
 @NgModule({
     declarations: [
@@ -59,6 +60,7 @@ import {FileService} from './services/file/file.service';
         FilesComponent,
         FileFormComponent,
         DragAndDropDirective,
+        UserFormComponent,
     ],
     imports: [
         BrowserModule,

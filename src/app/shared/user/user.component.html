@@ -1,23 +1,37 @@
-<div id="user">
-    <div class="content">
-        <div class="top">
-            <div class="icon-rounded">
-                <i class="far fa-user"></i>
-            </div>
-            <span class="username">{{ user.name }}</span>
-            <span class="job">{{ user.job }}</span>
-        </div>
+<div class="user-element">
+  <button class="btn-floating btn-small waves-effect waves-light edit" (click)="showForm()">
+    <i class="material-icons">edit</i>
+  </button>
 
-        <div class="informations">
-            <div class="information">
-                <i class="far fa-envelope-open"></i>
-                <span>{{ user.email }}</span>
-            </div>
-
-            <div class="information">
-                <i class="fas fa-phone"></i>
-                <span>{{ user.phone }}</span>
-            </div>
-        </div>
+  <div class="content">
+    <div class="top">
+      <div class="icon-rounded">
+        <i class="far fa-user"></i>
+      </div>
+      <span class="username">{{ user.firstname }} {{ user.lastname }}</span>
+      <span class="job">{{ user.job }}</span>
     </div>
+
+    <div class="informations">
+      <div class="information">
+        <i class="far fa-envelope-open"></i>
+        <span>{{ user.email }}</span>
+      </div>
+
+      <div class="information">
+        <i class="fas fa-phone"></i>
+        <span>{{ user.phone }}</span>
+      </div>
+
+      <div class="information">
+        <i class="fas fa-users"></i>
+        <span>{{ user.team }}</span>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!--Modal add file-->
+<pwe-modal [isVisible]="formIsVisible" (hideModal)="hideForm($event)">
+  <pwe-user-form [user]="user"></pwe-user-form>
+</pwe-modal>

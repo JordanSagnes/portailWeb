@@ -14,13 +14,13 @@ export class FileService {
 
     public getAllFiles(): any {
       let files = [];
-      this.firestore.storage.ref().listAll().then(res => {
-        res.items.forEach((file) => {
-          file.getDownloadURL().then((url) => {
-            files.push({name: file.name, url});
-          });
-        });
-      });
+      // this.firestore.storage.ref().listAll().then(res => {
+      //   res.items.forEach((file) => {
+      //     file.getDownloadURL().then((url) => {
+      //       files.push({name: file.name, url});
+      //     });
+      //   });
+      // });
       return files;
     }
 
