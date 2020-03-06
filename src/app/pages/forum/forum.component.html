@@ -23,7 +23,7 @@
         <pwe-forum-form (hideForm)="hideForm($event)"></pwe-forum-form>
     </pwe-modal>
 
-    <a class="btn-floating btn-large waves-effect waves-light red btn-addPost" (click)="showForm()">
+    <a class="btn-floating btn-large waves-effect waves-light red btn-addPost" (click)="showForm()" *ngIf="canAddPost()">
         <i class="material-icons">add</i>
     </a>
 

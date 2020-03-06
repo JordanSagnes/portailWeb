@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import User from '../../interfaces/user';
 import {UsersService} from '../../services/users/users.service';
-import {SnackBarService} from "../snack-bar/snack-bar.service";
+import {SnackBarService} from '../snack-bar/snack-bar.service';
 
 @Component({
   selector: 'pwe-user-form',

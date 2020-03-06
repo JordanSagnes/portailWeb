@@ -14,7 +14,7 @@
         <pwe-file-form (hideForm)="hideForm($event)"></pwe-file-form>
     </pwe-modal>
 
-    <a class="btn-floating btn-large waves-effect waves-light red btn-addFile" (click)="showForm()">
+    <a class="btn-floating btn-large waves-effect waves-light red btn-addFile" (click)="showForm()" *ngIf="canAddFile()">
         <i class="material-icons">add</i>
     </a>
 </div>

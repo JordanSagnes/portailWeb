@@ -1,5 +1,5 @@
 <div class="user-element">
-  <button class="btn-floating btn-small waves-effect waves-light edit" (click)="showForm()">
+  <button class="btn-floating btn-small waves-effect waves-light edit" (click)="showForm()" *ngIf="canEdit()">
     <i class="material-icons">edit</i>
   </button>
 
