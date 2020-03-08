@@ -1,5 +1,15 @@
 <div id="usersList">
-    <div class="user" *ngFor="let user of users">
-        <pwe-user [user]="user"></pwe-user>
+  <div class="searchBar">
+    <i class="fas fa-search"></i>
+    <div class="input-field">
+      <input type="text" placeholder="recherche (prénom, nom, email, ...)" [(ngModel)]="searchTerm" (change)="search()">
     </div>
+  </div>
+
+
+  <div class="users">
+    <div class="user" *ngFor="let user of search()">
+      <pwe-user [user]="user"></pwe-user>
+    </div>
+  </div>
 </div>

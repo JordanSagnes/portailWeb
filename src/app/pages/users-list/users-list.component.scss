@@ -1,14 +1,30 @@
 #usersList {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -20px;
+  .searchBar {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 
-  .user {
-    margin: 0 20px;
+    i {
+      margin-right: 20px;
+    }
+    .input-field, input {
+      width: 100%;
+    }
   }
 
-  &::after {
-    content: "";
-    flex: auto;
+  .users {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -20px;
+
+    .user {
+      margin: 0 20px;
+    }
+
+    &::after {
+      content: "";
+      flex: auto;
+    }
   }
 }
