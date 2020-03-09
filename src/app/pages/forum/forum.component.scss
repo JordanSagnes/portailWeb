@@ -1,74 +1,95 @@
 @import "~src/sass/variables";
 
 #forum {
-  .post {
-    background-color: white;
-    box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
-    border-radius: 7px;
-    max-width: 400px;
-    min-width: 300px;
-    margin: 50px auto 0 auto;
+  .posts {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -20px;
 
-    .content {
-      display: flex;
-      flex-direction: column;
-      padding: 20px 30px;
-      border-bottom: 1px solid rgba(0,0,0,0.1);
+    .post {
+      background-color: white;
+      box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+      border-radius: 7px;
+      max-width: 400px;
+      min-width: 300px;
+      margin: 20px;
 
-      .top {
+      .content {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        padding-bottom: 20px;
+        padding: 20px 30px;
         border-bottom: 1px solid rgba(0,0,0,0.1);
 
-        .title {
-          font-size: 20px;
-        }
-
-        .icon-rounded {
+        .top {
           display: flex;
+          flex-direction: column;
           align-items: center;
-          justify-content: center;
-          width: 60px;
-          height: 60px;
-          border: 2px solid rgba(0,0,0,0.3);
-          border-radius: 100%;
-          margin-bottom: 10px;
+          padding-bottom: 20px;
+          border-bottom: 1px solid rgba(0,0,0,0.1);
 
-          i {
-            color: rgba(0,0,0,0.3);
-            font-size: 40px;
+          .title {
+            font-size: 20px;
+          }
+
+          .icon-rounded {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(0,0,0,0.3);
+            border-radius: 100%;
+            margin-bottom: 10px;
+
+            i {
+              color: rgba(0,0,0,0.3);
+              font-size: 40px;
+            }
           }
         }
-      }
 
 
-      .informations {
-        display: flex;
-        flex-direction: column;
-        margin-top: 20px;
-        max-height: 200px;
-        overflow-y: hidden;
+        .informations {
+          display: flex;
+          flex-direction: column;
+          margin-top: 20px;
+          height: 80px;
+          overflow: hidden;
+        }
+
+        .button {
+          display: flex;
+          justify-content: flex-end;
+
+          span {
+            cursor: pointer;
+            color: rgba(0,0,0,0.4);
+            font-weight: bold;
+            font-size: 12px;
+            font-style: italic;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+              color: $primaryColor;
+            }
+          }
+        }
       }
     }
   }
 
   .btn-addPost {
     position: fixed;
-    bottom: 50px;
-    right: 50px;
+    background-color: $primaryColor;
+    bottom: 20px;
+    right: 20px;
   }
 
   .showPost {
-    color: $primaryColor;
-  }
-
-  .my-modal {
-    min-width: 500px;
-
-    @media screen and (max-width: $mobileSize) {
-      min-width: auto;
+    width: 1200px;
+    h1 {
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
     }
   }
 }

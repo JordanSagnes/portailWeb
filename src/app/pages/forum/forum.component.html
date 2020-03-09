@@ -1,31 +1,41 @@
 <div id="forum">
-    <h1>Forum</h1>
-
-    <!--List-->
-    <div class="posts">
-        <div class="post" *ngFor="let post of posts">
-            <div class="content">
-                <div class="top">
-                    <div class="icon-rounded">
-                        <i class="far fa-newspaper"></i>
-                    </div>
-                    <span class="title">{{ post.title }}</span>
-                </div>
-
-                <div class="informations">
-                    <div [innerHTML]="post.content"></div>
-                </div>
-            </div>
+  <!--List-->
+  <div class="posts">
+    <div class="post" *ngFor="let post of posts">
+      <div class="content">
+        <div class="top">
+          <div class="icon-rounded">
+            <i class="far fa-newspaper"></i>
+          </div>
+          <span class="title">{{ post.title }}</span>
         </div>
+
+        <div class="informations">
+          <div [innerHTML]="post.content"></div>
+        </div>
+
+        <div class="button">
+          <span (click)="showPost(post)">Lire la suite &gt;</span>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!--Modal add post-->
-    <pwe-modal [isVisible]="formIsVisible" (hideModal)="hideForm($event)">
-        <pwe-forum-form (hideForm)="hideForm($event)"></pwe-forum-form>
-    </pwe-modal>
+  <!--Modal show post-->
+  <pwe-modal [isVisible]="postIsVisible" (hideModal)="hidePost($event)">
+    <div class="showPost">
+      <h1>{{ currentPost.title }}</h1>
+      <div [innerHTML]="currentPost.content"></div>
+    </div>
+  </pwe-modal>
 
-    <a class="btn-floating btn-large waves-effect waves-light red btn-addPost" (click)="showForm()" *ngIf="canAddPost()">
-        <i class="material-icons">add</i>
-    </a>
+  <!--Modal add post-->
+  <pwe-modal [isVisible]="formIsVisible" (hideModal)="hideForm($event)">
+    <pwe-forum-form (hideForm)="hideForm($event)"></pwe-forum-form>
+  </pwe-modal>
+
+  <a class="btn-floating btn-large waves-effect waves-light btn-addPost" (click)="showForm()" *ngIf="canAddPost()">
+    <i class="material-icons">add</i>
+  </a>
 
 </div>

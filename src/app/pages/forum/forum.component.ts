@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {PostService} from '../../services/post/post.service';
 import {AuthService} from '../../services/auth/auth.service';
 import User from '../../interfaces/user';
+import Post from '../../interfaces/post';
 
 @Component({
   selector: 'pwe-forum',
@@ -9,12 +10,15 @@ import User from '../../interfaces/user';
   styleUrls: ['./forum.component.scss']
 })
 export class ForumComponent implements OnInit {
-  private posts: any;
+  private posts: Post[];
+  private currentPost: Post;
   private formIsVisible: boolean;
+  private postIsVisible: boolean;
   private userLogged: User | undefined;
 
   constructor(private postService: PostService, private authService: AuthService) {
     this.formIsVisible = false;
+    this.currentPost = {title: '', content: ''};
     this.posts = [];
   }
   ngOnInit() {
@@ -29,6 +33,13 @@ export class ForumComponent implements OnInit {
   }
   hideForm($event) {
     this.formIsVisible = false;
+  }
+  showPost(post: Post) {
+    this.currentPost = post;
+    this.postIsVisible = true;
+  }
+  hidePost($event) {
+    this.postIsVisible = false;
   }
 
 }

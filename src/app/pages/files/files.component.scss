@@ -1,8 +1,11 @@
+@import "~src/sass/variables";
+
 #files {
   .btn-addFile {
+    background-color: $primaryColor;
     position: fixed;
-    bottom: 50px;
-    right: 50px;
+    bottom: 20px;
+    right: 20px;
   }
 
   .files {
