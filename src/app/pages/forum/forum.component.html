@@ -3,19 +3,20 @@
 
     <!--List-->
     <div class="posts">
-        <ul class="collection">
-            <li class="collection-item avatar" *ngFor="let post of posts">
-                <i class="material-icons circle">comment</i>
-                <span class="title">{{post.title}}</span>
-                <div [innerHTML]="post.content"></div>
-                <a href="#" class="secondary-content"><i class="material-icons showPost">send</i></a>
-            </li>
+        <div class="post" *ngFor="let post of posts">
+            <div class="content">
+                <div class="top">
+                    <div class="icon-rounded">
+                        <i class="far fa-newspaper"></i>
+                    </div>
+                    <span class="title">{{ post.title }}</span>
+                </div>
 
-            <li class="collection-item avatar" *ngIf="posts.length === 0">
-                <i class="material-icons circle">comment</i>
-                <span class="title">Aucun article</span>
-            </li>
-        </ul>
+                <div class="informations">
+                    <div [innerHTML]="post.content"></div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!--Modal add post-->

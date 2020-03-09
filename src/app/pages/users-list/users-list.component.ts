@@ -19,8 +19,8 @@ export class UsersListComponent implements OnInit {
   search() {
     if (this.searchTerm.length > 1 && this.users.length > 1) {
       return this.users.filter(user => {
-        const filter = user.firstname.concat(' ' + user.lastname).concat(' ' + user.email).concat(' ' + user.phone);
-        return filter.includes(this.searchTerm);
+        const filter = user.name.concat(' ' + user.email).concat(' ' + user.phone).toLocaleLowerCase();
+        return filter.includes(this.searchTerm.toLocaleLowerCase());
       });
     }
     return this.users;

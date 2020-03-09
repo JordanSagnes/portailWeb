@@ -14,8 +14,7 @@ exports.triggerUser = functions.auth.user().onCreate((user) => {
         .firestore()
         .collection('/users/').doc(user.uid).set({
             email: user.email,
-            firstname:'',
-            lastname:'',
+            name: 'non défini',
             phone:'',
             image:'',
             role:'utilisateur',

@@ -1,13 +1,20 @@
 <div class="user-form">
-  <div class="top">
-    <div class="icon-rounded">
-      <i class="far fa-user"></i>
-    </div>
-    <span class="username">{{ model.firstname }} {{ model.lastname }}</span>
-    <span class="email">{{ model.email }}</span>
-  </div>
-
   <form novalidate #f="ngForm">
+    <div class="top">
+      <div class="icon-rounded">
+        <i class="far fa-user"></i>
+      </div>
+      <span class="email">{{ model.email }}</span>
+    </div>
+
+    <div class="input-field">
+      <i class="material-icons prefix">contacts</i>
+      <input id="name" name="name" type="text" [(ngModel)]="model.name" placeholder="prénom nom" required #name="ngModel">
+      <span class="helper-text error" data-error="wrong" *ngIf="name.dirty && name.errors?.required">
+        Ce champ est requis
+      </span>
+    </div>
+
     <div class="input-field">
       <i class="material-icons prefix">phone</i>
       <input id="phone" name="phone" type="tel" [(ngModel)]="model.phone" placeholder="Téléphone" required #phone="ngModel">

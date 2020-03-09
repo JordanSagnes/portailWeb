@@ -4,8 +4,7 @@ interface User {
     job: string;
     role: string;
     team: string;
-    firstname: string;
-    lastname: string;
+    name: string;
     image: string;
     id: string;
 }
