@@ -17,7 +17,6 @@ export class ForumComponent implements OnInit {
     this.formIsVisible = false;
     this.posts = [];
   }
-
   ngOnInit() {
     this.postService.getAllPosts().subscribe((posts) => this.posts = posts);
     this.authService.getUserDocument().subscribe(user => this.userLogged = user);
