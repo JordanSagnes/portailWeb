@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FileService} from '../../services/file/file.service';
 import {AuthService} from '../../services/auth/auth.service';
 import User from '../../interfaces/user';
+import File from '../../interfaces/file';
 
 @Component({
   selector: 'pwe-files',
@@ -10,15 +11,15 @@ import User from '../../interfaces/user';
 })
 export class FilesComponent implements OnInit {
   private formIsVisible: boolean;
-  private files = [];
+  private files: File[] = [];
   private userLogged: User | undefined;
 
-  constructor(private filerService: FileService, private authService: AuthService) {
+  constructor(private fileService: FileService, private authService: AuthService) {
     this.formIsVisible = false;
   }
 
   ngOnInit() {
-    this.files = this.filerService.getAllFiles();
+    this.files = this.fileService.getAllFiles();
     this.authService.getUserDocument().subscribe(user => this.userLogged = user);
   }
   canAddFile() {
