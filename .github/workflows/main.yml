@@ -2,7 +2,7 @@
 
 name: CI
 
-# Controls when the action will run. Triggers the workflow on push or pull request 
+# Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
   push:
@@ -30,3 +30,11 @@ jobs:
     # Runs a single command using the runners shell
     - name: Lint
       run: npm run lint
+
+    # Install firebase
+    - name: Install firebase
+      run: npm install -g firebase-tools
+
+    #Deploy firebase hosting
+    - name: Deploy firebase hosting
+      run: firebase deploy --project entrepotdonnees-27f74 --token 1//09Ch38eec6zy7CgYIARAAGAkSNwF-L9IrCb3rtk4Xr8KX-kxsODll7KlYwMAypqyS9kiX4kZBRzM_hAyiyczna8Wqvxxk8POLQb4
