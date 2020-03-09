@@ -1,17 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
 import {AuthService} from './services/auth/auth.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'pwe-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'portailWeb';
-  private showSideNav: boolean = true;
-  private isAuth: boolean = false;
+  private showSideNav = true;
+  private isAuth = false;
 
   constructor(private authService: AuthService) {}
 

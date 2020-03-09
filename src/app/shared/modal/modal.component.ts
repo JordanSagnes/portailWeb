@@ -7,7 +7,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class ModalComponent implements OnInit {
   @Input() private isVisible: boolean;
-  @Output('hideModal') hideModal = new EventEmitter<void>();
+  @Output() hideModal = new EventEmitter<void>();
   constructor() {}
 
   ngOnInit() {

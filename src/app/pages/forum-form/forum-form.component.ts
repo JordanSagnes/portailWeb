@@ -12,7 +12,7 @@ import {SnackBarService} from '../../shared/snack-bar/snack-bar.service';
 export class ForumFormComponent implements OnInit {
   private model: Post;
   private Editor = ClassicEditor;
-  @Output('hideForm') hideForm = new EventEmitter<void>();
+  @Output() hideForm = new EventEmitter<void>();
   constructor(private postService: PostService, private snackBarService: SnackBarService) {
     this.initPost();
   }

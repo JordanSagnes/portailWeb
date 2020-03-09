@@ -1,5 +1,5 @@
 <div class="my-modal" *ngIf="isVisible" (click)="hide()">
-    <div class="box" click-stop-propagation>
+    <div class="box" appClickStopPropagation>
         <i class="fas fa-times close-modal" (click)="hide()"></i>
         <div class="content">
             <ng-content></ng-content>

@@ -32,9 +32,9 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 
 export class SnackBarComponent implements OnInit {
-  private type: string = 'success';
-  private message: string = '';
-  private isVisible: boolean = false;
+  private type = 'success';
+  private message = '';
+  private isVisible = false;
   constructor(private snackBarService: SnackBarService) {}
 
   ngOnInit() {
@@ -45,7 +45,7 @@ export class SnackBarComponent implements OnInit {
     this.snackBarService.getType().subscribe(type => this.type = type);
   }
   show() {
-    if(this.message.length > 0) {
+    if (this.message.length > 0) {
       this.isVisible = true;
       setTimeout(() => this.hide(), 3000);
     }

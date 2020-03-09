@@ -12,7 +12,7 @@ export class FileFormComponent implements OnInit {
   private fileName = '';
   private file: any;
   private uploadProgress = new Observable<number|undefined>();
-  @Output('hideForm') hideForm = new EventEmitter<void>();
+  @Output() hideForm = new EventEmitter<void>();
   constructor(private afStorage: AngularFireStorage, private snackBarService: SnackBarService) {}
 
   ngOnInit() {

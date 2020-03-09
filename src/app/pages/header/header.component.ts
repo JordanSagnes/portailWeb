@@ -11,8 +11,8 @@ import {SnackBarService} from '../../shared/snack-bar/snack-bar.service';
 })
 export class HeaderComponent implements OnInit {
 
-  private showSideNav: boolean = true;
-  private isAuth: boolean = false;
+  private showSideNav = true;
+  private isAuth = false;
   @Output() showSideNavEvent = new EventEmitter<boolean>();
   constructor(private authService: AuthService, private snackBarService: SnackBarService, private router: Router) { }
 

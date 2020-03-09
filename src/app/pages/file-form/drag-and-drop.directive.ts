@@ -1,10 +1,10 @@
 import {Directive, EventEmitter, HostBinding, HostListener, Output} from '@angular/core';
 
 @Directive({
-  selector: '[pweDragAndDrop]'
+  selector: '[appDragAndDrop]'
 })
 export class DragAndDropDirective {
-  @Output() onFileDropped = new EventEmitter<any>();
+  @Output() fileDropped = new EventEmitter<any>();
 
   @HostBinding('style.border-color') private borderColor = 'rgba(0,0,0,0.1)';
 
@@ -29,7 +29,7 @@ export class DragAndDropDirective {
     this.borderColor = 'rgba(0,0,0,0.1)';
     const files = evt.dataTransfer.files;
     if (files.length > 0) {
-      this.onFileDropped.emit(files);
+      this.fileDropped.emit(files);
     }
   }
 }

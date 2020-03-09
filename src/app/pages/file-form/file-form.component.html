@@ -1,7 +1,7 @@
 <div id="file-form">
     <h2><i class="far fa-folder-open"></i> Ajouter un fichier</h2>
     <form novalidate #f="ngForm">
-        <div class="input-file" pweDragAndDrop (onFileDropped)="dragFile($event)">
+        <div class="input-file" appDragAndDrop (fileDropped)="dragFile($event)">
             <input type="file" class="hidden" name="file" (change)="importFile($event)" #file>
             <span class="title">Glisser / déposer un fichier</span>
             <button type="button" class="btn-file" (click)="file.click()"><i class="fas fa-upload"></i>Choisir un fichier</button>
