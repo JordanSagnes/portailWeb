@@ -34,7 +34,7 @@ jobs:
     # Build application
     - name: build app
       run: npm run build
-      
+
     # Install firebase
     - name: Install firebase
       run: npm install -g firebase-tools
