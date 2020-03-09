@@ -4,14 +4,8 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatSliderModule} from '@angular/material/slider';
 import {LoginComponent} from './pages/login/login.component';
-import {MatCardModule, MatFormFieldModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
 import {LayoutModule} from '@angular/cdk/layout';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatListModule} from '@angular/material/list';
-import {MatInputModule} from '@angular/material/input';
 import {UserComponent} from './shared/user/user.component';
 import {HeaderComponent} from './pages/header/header.component';
 import {NavigationComponent} from './pages/navigation/navigation.component';
@@ -39,7 +33,7 @@ import { SnackBarComponent } from './shared/snack-bar/snack-bar.component';
 import { FilesComponent } from './pages/files/files.component';
 import { FileFormComponent } from './pages/file-form/file-form.component';
 import { DragAndDropDirective } from './pages/file-form/drag-and-drop.directive';
-import {AngularFireStorage, AngularFireStorageModule} from '@angular/fire/storage';
+import {AngularFireStorageModule} from '@angular/fire/storage';
 import {FileService} from './services/file/file.service';
 import { UserFormComponent } from './shared/user-form/user-form.component';
 
@@ -71,16 +65,7 @@ import { UserFormComponent } from './shared/user-form/user-form.component';
         AngularFireDatabaseModule,
         AngularFireStorageModule,
         AngularFirestoreModule,
-        MatSliderModule,
-        MatToolbarModule,
-        MatSidenavModule,
         LayoutModule,
-        MatButtonModule,
-        MatIconModule,
-        MatListModule,
-        MatCardModule,
-        MatFormFieldModule,
-        MatInputModule,
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
