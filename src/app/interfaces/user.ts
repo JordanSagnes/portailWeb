@@ -7,6 +7,7 @@ interface User {
     name: string;
     image: string;
     id: string;
+    register: string;
 }
 
 export default User;

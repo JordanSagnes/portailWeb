@@ -4,8 +4,27 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 h1, h2 {
+  font-family: 'Exo 2', sans-serif;
   font-size: 20px;
   margin: 0;
+}
+
+h1.title {
+  font-size: 50px;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+
+  @media screen and (max-width: $mobileSize) {
+    font-size: 35px;
+  }
+
+  span {
+    color: $primaryColor;
+  }
 }
 
 /* label focus color */

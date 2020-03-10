@@ -3,6 +3,7 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import {PostService} from '../../services/post/post.service';
 import Post from '../../interfaces/post';
 import {SnackBarService} from '../../shared/snack-bar/snack-bar.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'pwe-forum-form',
@@ -22,6 +23,7 @@ export class ForumFormComponent implements OnInit {
     this.model = {
       title : '',
       content: '',
+      date: moment().format('YYYY-MM-DD')
     };
   }
   addPost() {

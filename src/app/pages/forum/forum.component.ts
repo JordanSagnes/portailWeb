@@ -18,7 +18,7 @@ export class ForumComponent implements OnInit {
 
   constructor(private postService: PostService, private authService: AuthService) {
     this.formIsVisible = false;
-    this.currentPost = {title: '', content: ''};
+    this.currentPost = {title: '', content: '', date: ''};
     this.posts = [];
   }
   ngOnInit() {

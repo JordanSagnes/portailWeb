@@ -1,4 +1,5 @@
 <div id="forum">
+  <h1 class="title"><span>A</span>rticles</h1>
   <!--List-->
   <div class="posts">
     <div class="post" *ngFor="let post of posts">
@@ -31,7 +32,7 @@
 
   <!--Modal add post-->
   <pwe-modal [isVisible]="formIsVisible" (hideModal)="hideForm($event)">
-    <pwe-forum-form (hideForm)="hideForm($event)"></pwe-forum-form>
+    <pwe-forum-form (hideForm)="hideForm($event)" class="forumForm"></pwe-forum-form>
   </pwe-modal>
 
   <a class="btn-floating btn-large waves-effect waves-light btn-addPost" (click)="showForm()" *ngIf="canAddPost()">
