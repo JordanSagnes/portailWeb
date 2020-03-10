@@ -37,5 +37,9 @@ export class FilesComponent implements OnInit {
   hideForm($event) {
     this.formIsVisible = false;
   }
+  sortFiles(): File[] {
+    this.files.sort((a: File, b: File) => a.date.localeCompare(b.date));
+    return this.files;
+  }
 
 }

@@ -17,12 +17,13 @@ export class FileService {
         const files: File[] = [];
         this.firestore.storage.ref().listAll().then(res => {
             res.items.forEach((file) => {
-                file.getDownloadURL().then((url) => {
-                    files.push({name: file.name, url});
+                file.getMetadata().then(meta => {
+                    file.getDownloadURL().then((url) => {
+                        files.push({name: file.name, url, date: meta.updated});
+                    });
                 });
             });
         });
         return files;
     }
-
 }
