@@ -1,5 +1,6 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
+import * as moment from 'moment';
 
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
@@ -15,10 +16,11 @@ exports.triggerUser = functions.auth.user().onCreate((user) => {
         .collection('/users/').doc(user.uid).set({
             email: user.email,
             name: 'non défini',
-            phone:'',
+            phone:'non renseigné',
             image:'',
             role:'utilisateur',
-            team:'',
-            job:'',
+            team:'non renseigné',
+            job:'non renseigné',
+            register: moment().format('YYYY-MM-DD')
         });
 });

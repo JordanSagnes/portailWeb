@@ -15,6 +15,10 @@
             <div class="content" *ngFor="let user of users">
                 <span>{{ user.name }}</span>
             </div>
+
+            <div class="content" *ngIf="users.length === 0">
+                <span>Aucun utilisateur</span>
+            </div>
         </div>
 
         <div class="box" routerLink="/forum" routerLinkActive="active">
@@ -31,6 +35,10 @@
             <div class="content" *ngFor="let post of posts">
                 <span>{{ post.title }}</span>
             </div>
+
+            <div class="content" *ngIf="posts.length === 0">
+                <span>Aucun article</span>
+            </div>
         </div>
 
         <div class="box" routerLink="/files" routerLinkActive="active">
@@ -46,6 +54,10 @@
 
             <div class="content" *ngFor="let file of sortFile()">
                 <span>{{ file.name }}</span>
+            </div>
+
+            <div class="content" *ngIf="files.length === 0">
+                <span>Aucun fichier</span>
             </div>
         </div>
     </div>

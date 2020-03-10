@@ -8,10 +8,14 @@
     </div>
   </div>
 
-
   <div class="users">
     <div class="user" *ngFor="let user of search()">
       <pwe-user [user]="user"></pwe-user>
     </div>
+  </div>
+
+  <div class="noItem" *ngIf="search().length === 0">
+    <i class="fas fa-users"></i>
+    <span>Aucun utilisateur</span>
   </div>
 </div>

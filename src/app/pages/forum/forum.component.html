@@ -22,6 +22,11 @@
     </div>
   </div>
 
+  <div class="noItem" *ngIf="posts.length === 0">
+    <i class="far fa-newspaper"></i>
+    <span>Aucun article</span>
+  </div>
+
   <!--Modal show post-->
   <pwe-modal [isVisible]="postIsVisible" (hideModal)="hidePost($event)">
     <div class="showPost">
