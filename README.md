@@ -1,5 +1,7 @@
 # PortailWeb  
 
+Projet universitaire (Portail web) M2 Génie Informatique 2019-2020  
+
 ```
 npm install
 npm run start
